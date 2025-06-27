@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chess Grandmasters Wiki
 
-## Getting Started
+A simple wiki of chess grandmasters using Chess.com's API. This is a coding challenge for https://github.com/amenitiz/fe-technical-challenge.
 
-First, run the development server:
+## Requirements
+- Node.js version 18.18 or later
 
+## Tech Stack
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+
+## Setup
+1. Install dependencies:
 ```bash
-npm run dev
-# or
+yarn
+```
+2.Run dev server:
+```bash
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
+- Grandmaster list with pagination
+- Profile pages with online clock
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Notes About the Compromises:
+Due to time constraints, a few compromises were made.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Code Quality**:
+   - No Prettier setup as well as some additional improvements like lint-staged, husky, etc.
+   - Missing unit tests
+   - Basic error handling (no logging/retry logic) 
 
-## Learn More
+2. **UI/UX**:
+   - Basic design without animations
+   - Lack of loading indicators
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
