@@ -1,4 +1,4 @@
-import { fetchPlayerProfile } from '@/lib/chess/players';
+import { fetchPlayerProfile } from '@/lib/chess/api/players';
 import ProfileError from '@/components/chess/profile/ProfileError';
 import ProfileContainer from '@/components/chess/profile/ProfileContainer';
 

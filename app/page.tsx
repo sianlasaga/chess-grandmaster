@@ -1,23 +1,25 @@
-import GrandmasterList from "@/components/list/GrandmasterList";
-import { fetchGrandmasters } from "@/lib/chess/grandmasters";
+import GrandmasterList from "@/components/chess/gm-list/GrandmasterList";
+import { fetchGrandmasters } from "@/lib/chess/api/grandmasters";
+import DataFetchError from "@/components/ui/error/DataFetchError";
 
 export default async function Home() {
-  const grandmasters = await fetchGrandmasters();
+  try {
+    const grandmasters = await fetchGrandmasters();
 
-  if (grandmasters.length === 0) {
     return (
       <div className="container mx-auto p-4">
-        <div className="rounded-lg bg-red-100 p-4 text-red-800 dark:bg-red-900/30 dark:text-red-200">
-          <h2 className="mb-2 text-xl font-semibold">Failed to load data</h2>
-          <p>Please try refreshing the page or check back later.</p>
-        </div>
+        <h1 className="text-3xl font-bold mb-6">Chess Grandmasters</h1>
+        <GrandmasterList grandmasters={grandmasters} />
+      </div>
+    );
+  } catch (error) {
+    return (
+      <div className="container mx-auto p-4">
+        <DataFetchError
+          title="Grandmasters List Unavailable"
+          message="Failed to load the list of chess grandmasters. Please try again later."
+        />
       </div>
     );
   }
-
-  return (
-    <div className="container mx-auto p-4">
-      <GrandmasterList grandmasters={grandmasters} />
-    </div>
-  );
 }
